@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import TitleFunctional from "./components/TitleFunctional";
-import TitleClass from "./components/TitleClass";
-import ClickFunctional from "./components/ClickFunctional";
-import ClickClass from "./components/ClickClass";
-import UserGreeting from "./components/UserGreeting";
-import NameList from "./components/NameList";
-import Form from "./components/Form";
+// import TitleFunctional from "./components/TitleFunctional";
+// import TitleClass from "./components/TitleClass";
+// import ClickFunctional from "./components/ClickFunctional";
+// import ClickClass from "./components/ClickClass";
+// import UserGreeting from "./components/UserGreeting";
+// import NameList from "./components/NameList";
+// import Form from "./components/Form";
 import PostList from "./components/PostList";
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
         <div>
           <PostList></PostList>
         </div>
-        <TitleFunctional asd={this.state} />
+        {/* <TitleFunctional asd={this.state} />
         <ClickFunctional />
         <br />
         <TitleClass asd={this.state} />
@@ -35,7 +35,7 @@ class App extends Component {
         <UserGreeting />
         <NameList />
         <br />
-        <Form />
+        <Form /> */}
       </div>
     );
   }
