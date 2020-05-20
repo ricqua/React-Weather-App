@@ -1,0 +1,16 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: red; */
+  margin: 0;
+  background: pink;
+}
+
+.Title_container {
+  background: green;
+  padding: 10px 10px;
+}
+
+.WordList_container {
+  background-color: blue;
+  margin: 10px;
+}

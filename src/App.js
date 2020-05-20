@@ -1,44 +1,94 @@
 import React, { Component } from "react";
+//import "./App.css";
 
-// import TitleFunctional from "./components/TitleFunctional";
-// import TitleClass from "./components/TitleClass";
-// import ClickFunctional from "./components/ClickFunctional";
-// import ClickClass from "./components/ClickClass";
-// import UserGreeting from "./components/UserGreeting";
+// import Title from "./components/Title";
+// import WordList from "./components/WordList";
 // import NameList from "./components/NameList";
-// import Form from "./components/Form";
-import PostList from "./components/PostList";
+import ListItems from "./ListItems";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key1: "ones",
-      key2: "two",
-      // set1: [{ key1: "ones" }, { key2: "two" }],
+      items: [],
+      currentItem: {
+        text: "",
+        key: "",
+        word: "",
+        type: "",
+      },
     };
+    this.handleInput = this.handleInput.bind(this);
+    this.addItem = this.addItem.bind(this);
+  }
+
+  // this.setState({
+  //   ["word" + count]: {
+  //     word: response.data[0].meta.id,
+  //     type: response.data[0].fl,
+  //     syllubuls: response.data[0].hwi.hw,
+  //     definition: response.data[0].shortdef[0],
+  //     sound: "-",
+  //     api: API_CALL,
+  //   },
+
+  handleInput(e) {
+    e.preventDefault();
+    this.setState({
+      currentItem: {
+        text: e.target.value,
+        key: Date.now(),
+      },
+    });
+  }
+
+  addItem(e) {
+    e.preventDefault();
+    const newX = this.state.currentItem;
+    if (newX.text !== "") {
+      //If newX isn't black
+      const newXGroup = [...this.state.items, newX]; //...this unpacks all the items in the list and convertes them to individual items, then adds the second parameter to the list
+      this.setState({
+        items: newXGroup,
+        currentItem: {
+          text: "",
+          key: "",
+        },
+      });
+      console.log(this.state.items);
+    }
+    // else {
+    //   console.log("blank input");
+    // }
   }
 
   render() {
-    // console.log("App.js: ", this.state);
     return (
       <div className="App">
-        <div>
-          <PostList></PostList>
-        </div>
-        {/* <TitleFunctional asd={this.state} />
-        <ClickFunctional />
-        <br />
-        <TitleClass asd={this.state} />
-        <ClickClass />
-        <br />
-        <UserGreeting />
-        <NameList />
-        <br />
-        <Form /> */}
+        <header>
+          <form id="to-do-form" onSubmit={this.addItem}>
+            <input
+              type="text"
+              placeholder="Enter text"
+              value={this.state.currentItem.text}
+              onChange={this.handleInput}
+            ></input>
+            <button type="submit">Add</button>
+          </form>
+        </header>
+        <ListItems items={this.state.items}></ListItems>
       </div>
     );
   }
 }
 
 export default App;
+
+// return (
+//   <div className="App">
+//     <div>
+//       <Title />
+//       <WordList />
+//     </div>
+//   </div>
+// );
