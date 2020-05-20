@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import WordItem from "./WordItem";
 import axios from "axios";
 import PreviewWord from "./PreviewWord";
+import "./WordItem.css";
+import "./WordList.css";
 
 const API_URL = "https://www.dictionaryapi.com/api/v3/references/sd2/json/";
 const API_KEY = "?key=e225dcea-d406-43ba-922c-3b011d22b54e";
@@ -70,26 +72,37 @@ class WordList extends Component {
   render() {
     return (
       <div className="WordList_container">
-        <form onSubmit={this.handleFetch}>
-          <label>List of words </label>
-          <input
-            type="text"
-            value={this.state.word}
-            placeholder="e.g. cat"
-            onChange={(e) => {
-              searchWord = e.target.value;
-            }}
-          ></input>
-          <button onClick={this.handleFetch} type="submit">
-            Fetch
-          </button>
-        </form>
-        <div>
-          <PreviewWord currentItem={this.state.currentItem}></PreviewWord>
-          <button onClick={this.addItem}>Add to list</button>
+        <div className="Preparation_Container">
+          {/* <p className="WordList_Title">Preview Word</p> */}
+          <form onSubmit={this.handleFetch} className="form-container">
+            {/* <label>List of words </label> */}
+            <input
+              type="text"
+              value={this.state.word}
+              placeholder="e.g. cat"
+              onChange={(e) => {
+                searchWord = e.target.value;
+              }}
+            ></input>
+            <button
+              onClick={this.handleFetch}
+              type="submit"
+              className="btn btn-primary FetchButton"
+            >
+              Fetch
+            </button>
+          </form>
+          <div>
+            <PreviewWord currentItem={this.state.currentItem}></PreviewWord>
+            <button
+              onClick={this.addItem}
+              className="btn btn-success buttonAddToList"
+            >
+              Add to list
+            </button>
+          </div>
         </div>
-
-        <div>
+        <div className="Array_container">
           <WordItem items={this.state.items} />
         </div>
       </div>

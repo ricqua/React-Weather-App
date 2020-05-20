@@ -1,0 +1,28 @@
+.PreviewWord_container {
+  background: lightgreen;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+}
+
+.PreviewWord_Title {
+  color: Black;
+  font-weight: bold;
+  font-size: 18pt;
+  /* justify-content: center; */
+}
+
+.PreviewWord_tag {
+  color: lightslategray;
+  font-style: italic;
+}
+
+.PreviewWord_info {
+  /* background: green; */
+  color: black;
+  font-style: normal;
+}

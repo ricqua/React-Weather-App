@@ -1,0 +1,33 @@
+.WordItem_container {
+  background: lightgreen;
+  /* display: flex; */
+  justify-content: left;
+  align-items: center;
+  width: 500px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+}
+
+.wordAsset_Title {
+  color: Black;
+  font-weight: bold;
+  font-size: 18pt;
+  justify-content: center;
+}
+
+.wordAsset_tag {
+  color: lightslategray;
+  font-style: italic;
+}
+
+.wordAsset_info {
+  /* background: green; */
+  font-style: normal;
+  color: black;
+}
+
+.Array_container {
+  display: flex;
+  width: 90vw;
+}
