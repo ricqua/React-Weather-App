@@ -90,8 +90,8 @@ class WordList extends Component {
               type="submit"
               className="btn btn-primary fetchButton"
             >
+              Step 1: Search
               <i className="fas fa-search"></i>
-              Search
             </button>
           </form>
           <div>
@@ -100,8 +100,8 @@ class WordList extends Component {
               onClick={this.addItem}
               className="btn btn-success buttonAddToList"
             >
+              Step 2: Add to word list
               <i className="fas fa-plus-circle"></i>
-              Add to word list
             </button>
           </div>
         </div>

@@ -1,10 +1,16 @@
 .Store_container {
   /* background-color: green; */
-  margin: 10px;
+  margin: 15px 0;
   font-size: 14pt;
 }
 
 .Store_container > button {
   /* background-color: green; */
   font-size: 14pt;
+}
+
+.Store_container > button > i {
+  /* background-color: green; */
+  font-size: 16pt;
+  padding: 0 10px;
 }

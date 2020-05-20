@@ -17,10 +17,9 @@ class Store extends Component {
   render() {
     return (
       <div className="Store_container">
-        {/* <h1>Dictionary API</h1> */}
-        {/* <h2>Word list generator</h2> */}
         <button className="btn btn-success" onClick={this.handleAccountSave}>
-          Save to account
+          Step 3: Save to account
+          <i class="far fa-save"></i>
         </button>
       </div>
     );
