@@ -1,17 +1,43 @@
 .WordList_container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .Preparation_Container {
-  border: 1px solid black;
+  border-bottom: 1px solid white;
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
 }
 
-.form-container {
-  background: blue;
+.form_container {
+  /* background: blue; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.FetchButton {
+.form_container > input {
+  font-size: 14pt;
+  margin: 10px 10px 10px 0;
+  /* margin: 10px; */
+  padding: 5px;
+}
+
+.fetchButton {
+  font-size: 14pt;
+  margin: 0 0 0 5px;
+}
+
+.form_container > button > i {
+  font-size: 14pt;
+  margin: 0 10px 0 0;
 }
 
 .buttonAddToList {
+  font-size: 14pt;
+  margin: 5px 5px 15px 0;
+}
+
+.buttonAddToList > i {
+  font-size: 14pt;
+  margin: 0 10px 0 0;
 }

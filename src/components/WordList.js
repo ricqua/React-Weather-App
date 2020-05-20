@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WordItem from "./WordItem";
 import axios from "axios";
 import PreviewWord from "./PreviewWord";
+import Store from "./Store";
 import "./WordItem.css";
 import "./WordList.css";
 
@@ -74,7 +75,7 @@ class WordList extends Component {
       <div className="WordList_container">
         <div className="Preparation_Container">
           {/* <p className="WordList_Title">Preview Word</p> */}
-          <form onSubmit={this.handleFetch} className="form-container">
+          <form onSubmit={this.handleFetch} className="form_container">
             {/* <label>List of words </label> */}
             <input
               type="text"
@@ -87,9 +88,10 @@ class WordList extends Component {
             <button
               onClick={this.handleFetch}
               type="submit"
-              className="btn btn-primary FetchButton"
+              className="btn btn-primary fetchButton"
             >
-              Fetch
+              <i className="fas fa-search"></i>
+              Search
             </button>
           </form>
           <div>
@@ -98,13 +100,15 @@ class WordList extends Component {
               onClick={this.addItem}
               className="btn btn-success buttonAddToList"
             >
-              Add to list
+              <i className="fas fa-plus-circle"></i>
+              Add to word list
             </button>
           </div>
         </div>
-        <div className="Array_container">
+        <div className="row Array_container">
           <WordItem items={this.state.items} />
         </div>
+        <Store items={this.state.items} />
       </div>
     );
   }

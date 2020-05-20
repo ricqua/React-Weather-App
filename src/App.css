@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
 
 * {
-  font-size: 12px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   /* color: red; */
   margin: 0;
@@ -12,16 +12,18 @@
 
 .wrapper {
   background: linear-gradient(to right, #4b6cb7, #182848);
-  height: 100vh;
+  /* background: #fff; */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .main {
-  height: 90vh;
-  background: #fff;
-  box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
+  /* height: 90vh; */
+
+  /* background: linear-gradient(to right, #4b6cb7, #182848); */
+  /* box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75); */
   width: 80%;
   margin: 0 auto;
   padding: 1vh 1vw;

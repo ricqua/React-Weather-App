@@ -6,11 +6,11 @@ function WordItem(props) {
 
   const list = props.items.map((Y) => {
     return (
-      <div className="WordItem_container" key={Y.key}>
+      <div className="col WordItem_container" key={Y.key}>
         <p className="wordAsset_Title">{Y.word}</p>
-        <p className="wordAsset_tag">
+        {/* <p className="wordAsset_tag">
           key: <span className="wordAsset_info">{Y.key}</span>
-        </p>
+        </p> */}
         <p className="wordAsset_tag">
           Type: <span className="wordAsset_info">{Y.type}</span>
         </p>
@@ -20,11 +20,11 @@ function WordItem(props) {
         <p className="wordAsset_tag">
           Definition: <span className="wordAsset_info">{Y.definition}</span>
         </p>
-        <p className="wordAsset_tag">
+        {/* <p className="wordAsset_tag">
           API: <span className="wordAsset_info">{Y.api}</span>
-        </p>
+        </p> */}
 
-        <p className="wordAsset_tag">
+        {/* <p className="wordAsset_tag">
           sound:
           <a
             className="wordAsset_info"
@@ -34,10 +34,19 @@ function WordItem(props) {
           >
             {Y.sound}
           </a>
-        </p>
+        </p> */}
         <audio controls>
           <source src={Y.sound} type="audio/wav"></source>
         </audio>
+        <br />
+        <button className="btn btn-danger buttonDelete">
+          <i className="fas fa-trash-alt"></i>
+          <span>Remove</span>
+        </button>
+        <button className="btn btn-secondary buttonEdit">
+          <i className="far fa-edit"></i>
+          <span>Edit</span>
+        </button>
       </div>
     );
   });
