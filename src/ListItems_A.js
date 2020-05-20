@@ -4,7 +4,6 @@ function ListItems(props) {
   const objectA = props.items;
 
   const list = objectA.map((Y) => {
-    // console.log(item);
     return (
       <div className="list" key={Y.key}>
         <p>text: {Y.text}</p>

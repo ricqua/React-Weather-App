@@ -1,29 +1,33 @@
 import React from "react";
 
 function WordItem(props) {
-  // console.log("props: ", props);
-  const data = props.data.word1;
-  console.log("data: ", data);
+  // const objectA = props.items;
 
-  // const dataItems = data.word1.map((item) => {
-  //   return (
-  //     <div>
-  //       <p>{item.word}</p>
-  //     </div>
-  //   );
-  // });
+  const list = props.items.map((Y) => {
+    return (
+      <div className="list" key={Y.key}>
+        <p>word: {Y.word}</p>
+        <p>key: {Y.key}</p>
+      </div>
+    );
+  });
 
-  return (
-    <div>
-      <p>Word Item</p>
-      {data.word.length > 0 && (
-        <div>
-          <p>{data.sound}</p>
-          {/* <p>{dataItems}</p> */}
-        </div>
-      )}
-    </div>
-  );
+  return <div>{list}</div>;
 }
 
 export default WordItem;
+
+// function WordItem(props) {
+//   const objectA = props.items;
+
+//   const list = objectA.map((Y) => {
+//     return (
+//       <div className="list" key={Y.key}>
+//         <p>word: {Y.word}</p>
+//         <p>key: {Y.key}</p>
+//       </div>
+//     );
+//   });
+
+//   return <div>{list}</div>;
+// }

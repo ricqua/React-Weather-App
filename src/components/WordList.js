@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WordItem from "./WordItem";
 import axios from "axios";
+import PreviewWord from "./PreviewWord";
 
 const API_URL = "https://www.dictionaryapi.com/api/v3/references/sd2/json/";
 const API_KEY = "?key=e225dcea-d406-43ba-922c-3b011d22b54e";
@@ -10,53 +11,63 @@ class WordList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   searchWord: "",
-      //   word1: [],
-      // word1: { data: [{ meta: { id: "" } }] },
-      //   word2: [{ name: "WOOOP" }, { name: 2 }],
-      word1: { word: "test1", type: "test2", sound: "test3" },
+      items: [],
+      currentItem: {},
     };
+    this.handleFetch = this.handleFetch.bind(this);
+    // this.handleInput = this.handleInput.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
-  handleFetch = (e) => {
+  handleFetch(e) {
     e.preventDefault();
-    var count = Object.keys(this.state).length + 1;
     var API_CALL = API_URL + searchWord + API_KEY;
     axios
       .get(API_CALL)
       .then((response) => {
-        // console.log(response);
         this.setState({
-          ["word" + count]: {
+          currentItem: {
             word: response.data[0].meta.id,
             type: response.data[0].fl,
             syllubuls: response.data[0].hwi.hw,
             definition: response.data[0].shortdef[0],
-            sound: "-",
+            sound:
+              "https://media.merriam-webster.com/soundc11/" +
+              response.data[0].hwi.prs[0].sound.audio[0] +
+              "/" +
+              response.data[0].hwi.prs[0].sound.audio +
+              ".wav",
             api: API_CALL,
+            key: Date.now(),
           },
         });
-        console.log(this.state);
-        // console.log(count);
       })
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
 
-  // handleInputChange = (e) => {
-  //   searchWord = e.target.value;
-  // };
-
-  // NameList = () => {
-  //   const names = ["Bruce", "Clark", "Diana "];
-
-  //   const nameList = names.map((name, index) => <h2 key={index}>{name}</h2>);
-  //   return <div>{nameList}</div>;
-  // };
+  addItem(e) {
+    e.preventDefault();
+    const newX = this.state.currentItem;
+    if (newX.word !== "") {
+      const newXGroup = [...this.state.items, newX];
+      this.setState({
+        items: newXGroup,
+        currentItem: {
+          word: "",
+          type: "",
+          syllubuls: "",
+          definition: "",
+          sound: "",
+          api: "",
+          key: "",
+        },
+      });
+    }
+  }
 
   render() {
-    // const { word1 } = this.state;
     return (
       <div className="WordList_container">
         <form onSubmit={this.handleFetch}>
@@ -68,14 +79,18 @@ class WordList extends Component {
             onChange={(e) => {
               searchWord = e.target.value;
             }}
-            // onChange={this.handleInputChange}
           ></input>
           <button onClick={this.handleFetch} type="submit">
             Fetch
           </button>
         </form>
         <div>
-          <WordItem data={this.state} />
+          <PreviewWord currentItem={this.state.currentItem}></PreviewWord>
+          <button onClick={this.addItem}>Add to list</button>
+        </div>
+
+        <div>
+          <WordItem items={this.state.items} />
         </div>
       </div>
     );
