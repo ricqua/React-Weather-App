@@ -1,0 +1,12 @@
+.fetchFormComponent {
+  margin: 10px;
+}
+
+.searchWordInput {
+  color: black;
+}
+
+.fetchButton {
+  color: black;
+  width: 80px;
+}

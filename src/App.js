@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import WordList from "./components/WordList";
 import "./App.css";
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent";
+import FetchFormComponent from "./components/FetchFormComponent";
 
 class App extends Component {
   render() {
@@ -8,7 +10,10 @@ class App extends Component {
       <div className="App">
         <div className="wrapper">
           <div className="main">
-            <WordList />
+            <HeaderComponent />
+            <FetchFormComponent />
+            {/* <WordListComponent/> */}
+            <FooterComponent />
           </div>
         </div>
       </div>
