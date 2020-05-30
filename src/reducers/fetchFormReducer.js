@@ -27,29 +27,29 @@ export default function (state = initialState, action) {
     case "FETCH_FAIL":
       return {
         ...state,
-        error: action.payload,
+        error: "No data",
         loading: false,
       };
-    // case "LIST_ADD":
-    //   if (state.customList.indexOf(action.payload) === -1) {
-    //     return {
-    //       ...state,
-    //       customList: [...state.customList, action.payload],
-    //     };
-    //   }
-    //   return { ...state };
+    case "LIST_ADD":
+      if (state.customList.indexOf(action.payload) === -1) {
+        return {
+          ...state,
+          customList: [...state.customList, action.payload],
+        };
+      }
+      return { ...state };
 
-    // case "REMOVE_ITEM":
-    //   const removeElement = function (array, itemToRemove) {
-    //     let newArray = [...array];
-    //     newArray.splice(itemToRemove, 1);
-    //     return newArray;
-    //   };
-    //   let newArray = removeElement(state.data, action.payload - 1);
-    //   return {
-    //     ...state,
-    //     data: newArray,
-    //   };
+    case "REMOVE_ITEM":
+      const removeElement = function (array, itemToRemove) {
+        let newArray = [...array];
+        newArray.splice(itemToRemove, 1);
+        return newArray;
+      };
+      let newArray = removeElement(state.customList, action.payload - 1);
+      return {
+        ...state,
+        customList: newArray,
+      };
 
     default:
       return state;

@@ -5,26 +5,43 @@
 * {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
-  /* color: red; */
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
   background: linear-gradient(to right, #4b6cb7, #182848);
-  /* background: #fff; */
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .main {
-  /* height: 90vh; */
-
-  /* background: linear-gradient(to right, #4b6cb7, #182848); */
-  /* box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75); */
   width: 80%;
   margin: 0 auto;
   padding: 1vh 1vw;
+}
+
+.HeaderComponent {
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding: 50px 0 10px 0px;
+  color: white;
+}
+
+.HeaderComponent > h1 {
+  font-size: 36pt;
+  letter-spacing: 2px;
+  line-height: 1.3;
+}
+
+.HeaderComponent > h2 {
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.FooterComponent {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border-top: 1px solid white;
 }

@@ -1,7 +1,8 @@
 .Store_container {
-  /* background-color: green; */
   margin: 15px 0;
+  padding: 15px 0;
   font-size: 14pt;
+  border-top: 1px solid white;
 }
 
 .Store_container > button {

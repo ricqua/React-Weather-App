@@ -1,0 +1,16 @@
+.Array_Component {
+  display: flex;
+  flex-wrap: wrap;
+  width: 78vw;
+  /* border: 1px solid white; */
+  /* justify-content: center; */
+}
+
+.wordlist_Title {
+  color: white;
+}
+
+.customListName {
+  color: black;
+  font-size: 16pt;
+}

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import store from "../store";
-import "./FetchFormComponent.css";
-import spinner from "../spinner.gif";
 import axios from "axios";
-// import FetchMappedComponent from './FetchMappedComponent'
+import "./FetchFormComponent.css";
 
 export class FetchFormComponent extends Component {
   handleInputText = (data) => {
@@ -18,7 +16,6 @@ export class FetchFormComponent extends Component {
     const API_URL = "https://www.dictionaryapi.com/api/v3/references/sd2/json/";
     const API_KEY = "?key=e225dcea-d406-43ba-922c-3b011d22b54e";
     let searchWord = this.props.fetchFormText;
-    // console.log(this.props.fetchFormText);
     var API_CALL = API_URL + searchWord + API_KEY;
     store.dispatch((dispatch) => {
       dispatch({ type: "FETCH_REQUEST" });
@@ -38,13 +35,6 @@ export class FetchFormComponent extends Component {
   };
 
   render() {
-    let mappedItems = "TEST";
-    // if (this.props.data) {
-    //   mappedItems = this.props.data.map((item) => (
-    //     <FetchMappedComponent key={item.id} item={item} />
-    //   ));
-    // }
-
     return (
       <div className="fetchFormComponent">
         <form>
@@ -53,21 +43,14 @@ export class FetchFormComponent extends Component {
             onChange={(e) => this.handleInputText(e.target.value)}
             placeholder={this.props.fetchFormText}
           />
-          <button onClick={this.handleFetch} className="fetchButton">
-            Fetch
+          <button
+            onClick={this.handleFetch}
+            className="btn btn-primary fetchButton"
+          >
+            Step 1: Search
+            <i className="fas fa-search"></i>
           </button>
         </form>
-        {/* <div>
-          {this.props.loading ? (
-            <img
-              src={spinner}
-              style={{ width: "100px", display: "block" }}
-              alt="Loading..."
-            />
-          ) : (
-            <div>{mappedItems}</div>
-          )}
-        </div> */}
       </div>
     );
   }
@@ -76,7 +59,6 @@ export class FetchFormComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     fetchFormText: state.fetchFormState.fetchFormText,
-    // data: state.fetchFormState.data,
     loading: state.fetchFormState.loading,
   };
 };

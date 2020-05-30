@@ -1,5 +1,6 @@
 .fetchFormComponent {
-  margin: 10px;
+  /* margin: 10px; */
+  /* border: 1px solid black; */
 }
 
 .searchWordInput {
@@ -7,6 +8,18 @@
 }
 
 .fetchButton {
-  color: black;
-  width: 80px;
+  font-size: 14pt;
+  /* width: 80px; */
+}
+
+.fetchButton > i {
+  font-size: 14pt;
+  margin: 0 0 0 15px;
+}
+
+.searchWordInput {
+  font-size: 14pt;
+  margin: 10px 10px 10px 0;
+  /* margin: 10px; */
+  padding: 5px;
 }
