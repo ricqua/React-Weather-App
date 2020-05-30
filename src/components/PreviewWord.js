@@ -3,7 +3,6 @@ import "./PreviewWord.css";
 
 function PreviewWord(props) {
   const objectB = props.currentItem;
-  // console.log(objectB);
   if (objectB.text !== "") {
     return (
       <div className="PreviewWord_container" key={objectB.key}>

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import WordItem from "./WordItem";
 import axios from "axios";
+import WordItem from "./WordItem";
 import PreviewWord from "./PreviewWord";
 import Store from "./Store";
+import Title from "./Title";
+import Test from "./Test";
 import "./WordItem.css";
 import "./WordList.css";
 
@@ -16,9 +18,10 @@ class WordList extends Component {
     this.state = {
       items: [],
       currentItem: {},
+      currentItems: [],
+      test: [{ test1: "A" }, { test1: "B" }, { test1: "C" }, { test1: "E" }],
     };
     this.handleFetch = this.handleFetch.bind(this);
-    // this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
   }
 
@@ -28,9 +31,10 @@ class WordList extends Component {
     axios
       .get(API_CALL)
       .then((response) => {
+        var word = response.data[0].meta.id.split(":")[0];
         this.setState({
           currentItem: {
-            word: response.data[0].meta.id,
+            word: word,
             type: response.data[0].fl,
             syllubuls: response.data[0].hwi.hw,
             definition: response.data[0].shortdef[0],
@@ -43,6 +47,7 @@ class WordList extends Component {
             api: API_CALL,
             key: Date.now(),
           },
+          currentItems: response,
         });
       })
       .catch((error) => {
@@ -75,6 +80,8 @@ class WordList extends Component {
       <div className="WordList_container">
         <div className="Preparation_Container">
           {/* <p className="WordList_Title">Preview Word</p> */}
+          <Title />
+
           <form onSubmit={this.handleFetch} className="form_container">
             {/* <label>List of words </label> */}
             <input
@@ -94,6 +101,7 @@ class WordList extends Component {
               <i className="fas fa-search"></i>
             </button>
           </form>
+          <Test currentItems={this.state.currentItems} />
           <div>
             <PreviewWord currentItem={this.state.currentItem}></PreviewWord>
             <button

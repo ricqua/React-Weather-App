@@ -19,7 +19,7 @@ class Store extends Component {
       <div className="Store_container">
         <button className="btn btn-success" onClick={this.handleAccountSave}>
           Step 3: Save to account
-          <i class="far fa-save"></i>
+          <i className="far fa-save"></i>
         </button>
       </div>
     );

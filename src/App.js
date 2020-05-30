@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
-
-import Title from "./components/Title";
 import WordList from "./components/WordList";
-// import NameList from "./components/NameList";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -11,7 +8,6 @@ class App extends Component {
       <div className="App">
         <div className="wrapper">
           <div className="main">
-            <Title />
             <WordList />
           </div>
         </div>
