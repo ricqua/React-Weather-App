@@ -1,11 +1,10 @@
 import React from "react";
-// import "./FooterComponent.css";
-import "../App.css";
+import "./FooterComponent.css";
 
 const FooterComponent = () => {
   return (
     <div className="FooterComponent">
-      <p>Created by: Richard Quantrill. Copyright protected 2020</p>
+      <p>Created by: Richard Quantrill. Copyright protected 2021</p>
     </div>
   );
 };

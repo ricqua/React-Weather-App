@@ -1,6 +1,5 @@
 import React from "react";
-// import "./HeaderComponent.css";
-import "../App.css";
+import "./HeaderComponent.css";
 
 const HeaderComponent = () => {
   return (

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import HeaderComponent from "./components/HeaderComponent";
-import FooterComponent from "./components/FooterComponent";
-import FetchFormComponent from "./components/FetchFormComponent";
-import FetchStagingComponent from "./components/FetchStagingComponent";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
+import FetchFormComponent from "./components/FetchFormComponent/FetchFormComponent";
+import FetchStagingComponent from "./components/FetchStagingComponent/FetchStagingComponent";
 import WordListComponent from "./components/WordListComponent";
 
 class App extends Component {

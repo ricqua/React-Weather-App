@@ -1,6 +1,8 @@
+//Word search area at the top of the page which is used to fetch data from the dictionary API
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "../store";
+import store from "../../store";
 import axios from "axios";
 import "./FetchFormComponent.css";
 

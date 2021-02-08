@@ -1,9 +1,10 @@
+//Staging area of data fetched from dictionary api.  This area shows all json data mapped to individual cards to choose from.
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import store from "../store";
 import "./Array_Component.css";
-import spinner from "../Spinner.gif";
-import WordCardComponent from "./WordCardComponent";
+import spinner from "../images/Spinner.gif";
+import WordCardComponent from "../WordCardComponent";
 
 export class FetchStagingComponent extends Component {
   render() {
