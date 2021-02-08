@@ -1,8 +1,8 @@
-import fetchFormReducer from "./fetchFormReducer";
+import globalReducer from "./globalReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  fetchFormState: fetchFormReducer,
+  globalState: globalReducer,
   //   json: jsonReducer,
   //   counter: counterReducer,
   //   truefalse: trueFalseReducer,
