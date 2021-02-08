@@ -47,7 +47,7 @@ export class FetchFormComponent extends Component {
             onClick={this.handleFetch}
             className="btn btn-primary fetchButton"
           >
-            Step 1: Search
+            {/* Step 1: Search */}
             <i className="fas fa-search"></i>
           </button>
         </form>

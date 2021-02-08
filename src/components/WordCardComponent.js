@@ -70,7 +70,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleAddToList: () => dispatch(this.handleAddToList()),
-    // handleRemove: () => dispatch(this.handleRemove()),
   };
 };
 

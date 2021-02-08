@@ -40,7 +40,7 @@ export class WordCardComponent extends Component {
           className="btn btn-danger buttonDelete"
         >
           <i className="fas fa-trash-alt"></i>
-          <span>Remove</span>
+          {/* <span>Remove</span> */}
         </button>
       </div>
     );

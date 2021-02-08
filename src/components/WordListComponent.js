@@ -21,14 +21,14 @@ class WordListComponent extends Component {
 
     if (this.props.customList !== "") {
       return (
-        <div className="Store_container">
-          <span className="wordlist_Title">Word list name: </span>
+        <div className="WorldList_container">
+          {/* <span className="wordlist_Title">Word list name: </span> */}
           <input placeholder="Custom word list 1"></input>
-          <div className="Array_Component">{mappedItems}</div>
           <button className="btn btn-success" onClick={this.handleAccountSave}>
-            Step 2: Save to account
+            Save to account
             <i className="far fa-save"></i>
           </button>
+          <div className="Array_Component">{mappedItems}</div>
         </div>
       );
     } else {

@@ -1,6 +1,9 @@
 .Array_Component {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  /* height: 350px; */
+  /* justify-content: space-between; */
+  overflow-x: auto;
   width: 78vw;
   /* border: 1px solid white; */
   /* justify-content: center; */

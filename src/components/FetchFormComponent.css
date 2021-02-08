@@ -5,6 +5,9 @@
 
 .searchWordInput {
   color: black;
+  font-size: 14pt;
+  margin: 10px 10px 10px 0;
+  padding: 5px;
 }
 
 .fetchButton {
@@ -14,12 +17,5 @@
 
 .fetchButton > i {
   font-size: 14pt;
-  margin: 0 0 0 15px;
-}
-
-.searchWordInput {
-  font-size: 14pt;
-  margin: 10px 10px 10px 0;
-  /* margin: 10px; */
-  padding: 5px;
+  margin: 0 15px 0 15px;
 }

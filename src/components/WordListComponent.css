@@ -5,12 +5,19 @@
   border-top: 1px solid white;
 }
 
-.Store_container > button {
+.WorldList_container > input {
+  color: black;
+  font-size: 14pt;
+  margin: 10px 10px 10px 0;
+  padding: 5px;
+}
+
+.WorldList_container > button {
   /* background-color: green; */
   font-size: 14pt;
 }
 
-.Store_container > button > i {
+.WorldList_container > button > i {
   /* background-color: green; */
   font-size: 16pt;
   padding: 0 9px;
