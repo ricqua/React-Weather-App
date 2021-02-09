@@ -1,11 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "./CustomListAreaComponent.css";
 import CustomListCardComponent from "./CustomListCardComponent";
 
 function CustomListAreaComponent() {
   const globalState = useSelector((state) => state.globalState);
-  const dispatch = useDispatch();
 
   let mappedItems = "";
 
@@ -15,7 +14,7 @@ function CustomListAreaComponent() {
       <CustomListCardComponent key={item.id} item={item} />
     ));
   }
-  if (globalState.customList == "") {
+  if (globalState.customList === "") {
     return null;
   } else {
     return (
@@ -32,7 +31,7 @@ function CustomListAreaComponent() {
             Save to account
             <i className="far fa-save"></i>
           </button>
-          <div className="Array_Component">{mappedItems}</div>
+          <div className="CustomListArray_Component">{mappedItems}</div>
         </div>
       </React.Fragment>
     );

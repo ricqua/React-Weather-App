@@ -4,6 +4,16 @@ import "./StagedCardComponent.css";
 
 function StagedCardComponent(props) {
   const dispatch = useDispatch();
+  // const audioLink = `https://media.merriam-webster.com/soundc11/${props.item.meta.id[0]}/${props.item[0].hwi.prs[0].sound.audio}.wav`;
+  // let audioLink = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/cat00001.mp3`;
+  // `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/cat00001.mp3`;
+  // let audioLink = "";
+  // if (props.item.hwi.prs[0].sound.audio === undefined) {
+  //   audioLink =
+  //     "https://media.merriam-webster.com/audio/prons/en/us/mp3/c/cat00001.mp3";
+  // } else {
+  //   audioLink = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/${props.item.hwi.prs[0].sound.audio}.mp3`;
+  // }
 
   const handleAddToList = () => {
     dispatch({
@@ -33,18 +43,18 @@ function StagedCardComponent(props) {
           Definition:
           <span className="wordCard_data">{props.item.shortdef[0]}</span>
         </p>
+
         {/* <audio controls>
-          <source
-            src={
-              "https://media.merriam-webster.com/soundc11/" +
-              props.item.meta.id[0] +
-              "/" +
-              props.data[0].hwi.prs[0].sound.audio +
-              ".wav"
-            }
-            type="audio/wav"
-          ></source>
+          <source src={audioLink} type="audio/wav"></source>
         </audio> */}
+
+        {/* <button
+          onClick={() => {
+            console.log(props);
+          }}
+        >
+          Console log props
+        </button> */}
 
         <button
           onClick={handleAddToList}

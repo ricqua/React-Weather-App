@@ -25,9 +25,14 @@ function globalReducer(state = initialState, action) {
         loading: false,
       };
     case "LIST_ADD":
-      return { ...state, customList: [action.payload] };
+      let newCustomList = [...state.customList, action.payload];
+      return { ...state, customList: newCustomList };
     case "REMOVE_ITEM":
-      return { ...state, customList: "" };
+      let filteredCustomList = state.customList.filter(
+        (object) => object.word !== action.payload.word
+      );
+
+      return { ...state, customList: filteredCustomList };
     default:
       return state;
   }

@@ -1,8 +1,9 @@
-.Store_container {
-  margin: 15px 0;
-  padding: 15px 0;
-  font-size: 14pt;
-  border-top: 1px solid white;
+.CustomListArray_Component {
+  display: flex;
+  /* height: 350px; */
+  overflow-x: auto;
+  width: 78vw;
+  /* border: 1px solid white; */
 }
 
 .WorldList_container > input {
@@ -13,12 +14,12 @@
 }
 
 .WorldList_container > button {
-  /* background-color: green; */
+  background-color: green;
   font-size: 14pt;
 }
 
 .WorldList_container > button > i {
-  /* background-color: green; */
+  background-color: green;
   font-size: 16pt;
   padding: 0 9px;
 }
