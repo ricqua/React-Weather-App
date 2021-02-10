@@ -14,7 +14,7 @@ function CustomListAreaComponent() {
       <CustomListCardComponent key={item.id} item={item} />
     ));
   }
-  if (globalState.customList === "") {
+  if (globalState.customList.length <= 0) {
     return null;
   } else {
     return (

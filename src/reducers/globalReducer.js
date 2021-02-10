@@ -3,7 +3,7 @@ const initialState = {
   loading: false,
   data: "",
   error: "",
-  customList: "",
+  customList: [],
 };
 
 function globalReducer(state = initialState, action) {
@@ -25,6 +25,14 @@ function globalReducer(state = initialState, action) {
         loading: false,
       };
     case "LIST_ADD":
+      // let newCustomList = state.customList;
+      // for (var i = 0; i < state.customList.length; i++) {
+      //   if (state.customList[i].word.indexOf(action.payload.word) < 0) {
+      //     let newCustomList = [...state.customList, action.payload];
+      //     return { ...state, customList: newCustomList };
+      //   }
+      // }
+
       let newCustomList = [...state.customList, action.payload];
       return { ...state, customList: newCustomList };
     case "REMOVE_ITEM":
