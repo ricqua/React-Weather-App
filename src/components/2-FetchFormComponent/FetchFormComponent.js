@@ -30,6 +30,7 @@ function FetchFormComponent() {
     <React.Fragment>
       <div className="fetchFormComponent">
         <form>
+          {/* <p>Start by searching the dictionary API for a word.</p> */}
           <input
             className="searchWordInput"
             onChange={(e) =>

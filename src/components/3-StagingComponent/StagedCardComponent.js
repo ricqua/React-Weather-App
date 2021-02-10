@@ -4,21 +4,10 @@ import "./StagedCardComponent.css";
 
 function StagedCardComponent(props) {
   const dispatch = useDispatch();
-  // let audioLink = "";
-  // const audioLink = `https://media.merriam-webster.com/soundc11/${props.item.meta.id[0]}/${props.item[0].hwi.prs[0].sound.audio}.wav`;
-  // let audioLink = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/cat00001.mp3`;
-  // `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/cat00001.mp3`;
-  // let audioLink = "";
-  // if (props.item.hwi.prs[0].sound.audio === undefined) {
 
-  let audioLink;
-
+  // let audioLink;
   //   "https://media.merriam-webster.com/audio/prons/en/us/mp3/c/cat00001.mp3";
-
-  if (props.item.hwi.prs !== undefined) {
-    audioLink = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/${props.item.hwi.prs[0].sound.audio}.mp3`;
-  }
-  // } else {
+  // if (props.item.hwi.prs !== undefined) {
   //   audioLink = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${props.item.meta.id[0]}/${props.item.hwi.prs[0].sound.audio}.mp3`;
   // }
 
@@ -29,7 +18,7 @@ function StagedCardComponent(props) {
         word: props.item.meta.id.split(":")[0],
         definition: props.item.shortdef[0],
         type: props.item.fl,
-        sound: audioLink,
+        // sound: audioLink,
       },
     });
   };
@@ -46,9 +35,9 @@ function StagedCardComponent(props) {
           <span className="wordCard_data">{props.item.shortdef[0]}</span>
         </p>
 
-        <audio controls>
+        {/* <audio controls>
           <source src={audioLink} type="audio/wav"></source>
-        </audio>
+        </audio> */}
 
         {/* <button
           onClick={() => {

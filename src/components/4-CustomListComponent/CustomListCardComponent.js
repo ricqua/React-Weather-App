@@ -15,9 +15,9 @@ function CustomListCardComponent(props) {
         Definition:
         <span className="wordCard_data">{props.item.definition}</span>
       </p>
-      <audio controls>
+      {/* <audio controls>
         <source src={props.item.audioLink} type="audio/wav"></source>
-      </audio>
+      </audio> */}
 
       <button
         onClick={() => {
